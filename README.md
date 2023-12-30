@@ -733,4 +733,4 @@ Le nettoyage et la fin du shell sont des étapes cruciales pour garantir une fer
 
 
 ## Licence
-[Licence](./LICENSE)
+This work is published under the terms of **[42 Unlicense](./LICENSE)**.
