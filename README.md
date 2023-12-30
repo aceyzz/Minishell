@@ -730,3 +730,7 @@ Nettoyer correctement toutes les ressources allouées et terminer l'exécution d
 ## Conclusion
 
 Le nettoyage et la fin du shell sont des étapes cruciales pour garantir une fermeture propre et éviter les fuites de mémoire ou d'autres ressources système. Elles contribuent à la stabilité et à la fiabilité du shell, en s'assurant que toutes les ressources sont correctement libérées et que le shell se termine avec un statut clair. Ce processus est essentiel pour maintenir l'intégrité du système d'exploitation et prévenir les problèmes liés à une fermeture inappropriée ou à un nettoyage incomplet.
+
+
+## Licence
+[Licence](./LICENSE)
