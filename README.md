@@ -66,9 +66,9 @@ Les pointeurs pour les tokens ```token```, l'entrée utilisateur ```user_input``
 Si une erreur se produit lors de l'initialisation (par exemple, une allocation mémoire échoue), le shell affiche un message d'erreur et termine l'exécution.
 
 #### Fonctions Annexes
-```venv_count``` : Compte le nombre de variables d'environnement.
-```increment_shlvl``` : Incrémente ou initialise la variable SHLVL.
-```init_wds``` : Initialise les répertoires de travail wdir et old_wdir.
+```venv_count``` : Compte le nombre de variables d'environnement. <br>
+```increment_shlvl``` : Incrémente ou initialise la variable SHLVL. <br>
+```init_wds``` : Initialise les répertoires de travail wdir et old_wdir. <br>
 
 #### Flux de Contrôle
 Appel de ```init_data```. <br>
