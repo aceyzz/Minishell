@@ -735,7 +735,7 @@ Le nettoyage et la fin du shell sont des étapes cruciales pour garantir une fer
 
 ## Résultat
 
-**(Evaluation prochaine...)**
+**(Evaluation à venir...)**
 
 ---
 
