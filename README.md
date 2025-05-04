@@ -84,6 +84,82 @@ Le programme Minishell doit pouvoir gérer les caractères génériques (*) et l
 
 ---
 
+## Architecure du projet
+```shell
+├── Bonus
+│   ├── skip_quote_a.c         # Sauter les guillemets simples
+│   ├── skip_quote_b.c         # Sauter les guillemets doubles
+│   ├── skip_quote_middle.c    # Sauter les guillemets mixtes
+│   ├── skip_utils.c           # Utilitaires pour sauter les guillemets
+│   ├── wilcard_ab_utils.c     # Fonctions utilitaires pour les wildcards
+│   ├── wildcard_base.c        # Logique de base des wildcards
+│   ├── wildcards.c            # Gérer les wildcards
+│   ├── wildcards_ab.c         # Gestion avancée des wildcards
+│   └── wildcards_mult.c       # Support des multi-wildcards
+├── Cmd
+│   ├── cd.c                   # Changer de répertoire
+│   ├── echo.c                 # Imprimer les arguments
+│   ├── env.c                  # Imprimer l'environnement
+│   ├── exec.c                 # Exécuter les commandes
+│   ├── exit.c                 # Quitter le shell
+│   ├── export.c               # Exporter des variables
+│   ├── pwd.c                  # Imprimer le répertoire courant
+│   ├── unset.c                # Désactiver des variables
+│   └── value_return.c         # Utilitaires pour les valeurs de retour
+├── FirstParse
+│   ├── splitter_first_inits.c # Initialiser le découpage
+│   ├── splitter_first_spaces.c # Gérer les espaces
+│   ├── splitter_scnd_main.c   # Logique secondaire de découpage
+│   ├── splitter_scnd_utils.c  # Fonctions utilitaires pour le découpage
+│   ├── tokenizer_handlers.c   # Gestionnaires de tokenisation
+│   ├── tokenizer_main.c       # Logique principale de tokenisation
+│   └── tokenizer_utils.c      # Utilitaires pour la tokenisation
+├── Include
+│   └── minishell.h            # Fichier d'en-tête
+├── Lexing
+│   ├── access.c               # Vérifications d'accès aux fichiers
+│   ├── access_exec.c          # Vérifications d'accès pour l'exécution
+│   ├── access_utils.c         # Fonctions utilitaires pour l'accès
+│   ├── cmd.c                  # Gestion des commandes
+│   ├── cmd_utils.c            # Utilitaires pour les commandes
+│   ├── cnf.c                  # Commande non trouvée
+│   ├── cnf_utils.c            # Fonctions utilitaires pour CNF
+│   ├── exit_code_utils.c      # Gestion des codes de sortie
+│   ├── lexing.c               # Analyse lexicale
+│   └── operator.c             # Gestion des opérateurs
+├── Libft
+├── Makefile                   # Construire le projet
+├── Mnsh
+│   ├── Initialisation.c       # Initialiser le shell
+│   ├── cmd_without.c          # Gérer les commandes
+│   ├── debug.c                # Outils de débogage
+│   ├── input_pipe.c           # Gestion des pipes d'entrée
+│   ├── mnsh_utils.c           # Utilitaires pour le shell
+│   ├── reverse.c              # Inverser les chaînes
+│   ├── signaux.c              # Gestion des signaux
+│   └── take_input.c           # Gestion des entrées
+├── Operators
+│   ├── cmd_redirect.c         # Rediriger les commandes
+│   ├── redirect_input_cmd.c   # Redirection d'entrée
+│   └── redirect_stdout.c      # Redirection de sortie
+├── Parsing
+│   ├── convert.c              # Convertir les tokens
+│   ├── convert_utils.c        # Fonctions utilitaires pour la conversion
+│   ├── erase_quote.c          # Supprimer les guillemets
+│   ├── new_arg.c              # Créer des arguments
+│   ├── new_arg_utils.c        # Fonctions utilitaires pour les arguments
+│   ├── parsing.c              # Analyser l'entrée
+│   └── pid_utils.c            # Gestion des PID
+├── Utils
+│   ├── error.c                # Gestion des erreurs
+│   ├── free.c                 # Libérer la mémoire
+│   └── utils.c                # Utilitaires généraux
+├── header.c                   # Logique de l'en-tête
+└── minishell.c                # Programme principal
+```
+
+---
+
 ## Résultat
 
 <img src="git_utils/grade.png" alt="grade" style="width: 25%">
@@ -176,6 +252,82 @@ The Minishell program must handle pipes, allowing the output of one command to b
 The Minishell program must handle variable expansions, replacing variables with their corresponding values.
 #### Handling wildcards (*) and quotes:
 The Minishell program must handle wildcards (*) and quotes, enabling flexible manipulation of files and strings.
+
+---
+
+## Project Architecture
+```shell
+├── Bonus
+│   ├── skip_quote_a.c         # Skip single quotes
+│   ├── skip_quote_b.c         # Skip double quotes
+│   ├── skip_quote_middle.c    # Skip mixed quotes
+│   ├── skip_utils.c           # Utilities for skipping quotes
+│   ├── wilcard_ab_utils.c     # Utility functions for wildcards
+│   ├── wildcard_base.c        # Basic logic for wildcards
+│   ├── wildcards.c            # Handle wildcards
+│   ├── wildcards_ab.c         # Advanced wildcard handling
+│   └── wildcards_mult.c       # Support for multi-wildcards
+├── Cmd
+│   ├── cd.c                   # Change directory
+│   ├── echo.c                 # Print arguments
+│   ├── env.c                  # Print environment
+│   ├── exec.c                 # Execute commands
+│   ├── exit.c                 # Exit the shell
+│   ├── export.c               # Export variables
+│   ├── pwd.c                  # Print current directory
+│   ├── unset.c                # Unset variables
+│   └── value_return.c         # Utilities for return values
+├── FirstParse
+│   ├── splitter_first_inits.c # Initialize splitting
+│   ├── splitter_first_spaces.c # Handle spaces
+│   ├── splitter_scnd_main.c   # Secondary splitting logic
+│   ├── splitter_scnd_utils.c  # Utility functions for splitting
+│   ├── tokenizer_handlers.c   # Tokenization handlers
+│   ├── tokenizer_main.c       # Main tokenization logic
+│   └── tokenizer_utils.c      # Utilities for tokenization
+├── Include
+│   └── minishell.h            # Header file
+├── Lexing
+│   ├── access.c               # File access checks
+│   ├── access_exec.c          # Execution access checks
+│   ├── access_utils.c         # Utility functions for access
+│   ├── cmd.c                  # Command handling
+│   ├── cmd_utils.c            # Command utilities
+│   ├── cnf.c                  # Command not found
+│   ├── cnf_utils.c            # Utility functions for CNF
+│   ├── exit_code_utils.c      # Exit code handling
+│   ├── lexing.c               # Lexical analysis
+│   └── operator.c             # Operator handling
+├── Libft
+├── Makefile                   # Build the project
+├── Mnsh
+│   ├── Initialisation.c       # Initialize the shell
+│   ├── cmd_without.c          # Handle commands
+│   ├── debug.c                # Debugging tools
+│   ├── input_pipe.c           # Input pipe handling
+│   ├── mnsh_utils.c           # Shell utilities
+│   ├── reverse.c              # Reverse strings
+│   ├── signaux.c              # Signal handling
+│   └── take_input.c           # Input handling
+├── Operators
+│   ├── cmd_redirect.c         # Command redirection
+│   ├── redirect_input_cmd.c   # Input redirection
+│   └── redirect_stdout.c      # Output redirection
+├── Parsing
+│   ├── convert.c              # Convert tokens
+│   ├── convert_utils.c        # Utility functions for conversion
+│   ├── erase_quote.c          # Remove quotes
+│   ├── new_arg.c              # Create arguments
+│   ├── new_arg_utils.c        # Utility functions for arguments
+│   ├── parsing.c              # Parse input
+│   └── pid_utils.c            # PID management
+├── Utils
+│   ├── error.c                # Error handling
+│   ├── free.c                 # Memory deallocation
+│   └── utils.c                # General utilities
+├── header.c                   # Header logic
+└── minishell.c                # Main program
+```
 
 ---
 
